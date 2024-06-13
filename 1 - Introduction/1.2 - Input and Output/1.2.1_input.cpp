@@ -11,7 +11,7 @@ int main()
 
 
     printf("%d %d %s\n",a,b,x.c_str());
-   // cout << a << " " << b << " " << x << endl;
+    // cout << a << " " << b << " " << x << endl;
 
 
 
