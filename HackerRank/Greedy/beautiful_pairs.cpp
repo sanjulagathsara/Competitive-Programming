@@ -16,43 +16,52 @@ vector<string> split(const string &);
  */
 
 int beautifulPairs(vector<int> A, vector<int> B) {
-    //vector<vector <int> > pairs;
+    
+    int pointerA = 0;
+    int pointerB = 0;
+    int n = A.size();
+    int nonListACount = 0;
+    int nonListBCount = 0;
 
-    int zero_pairs = 0;
-    int one_pairs = 0;
-    int more_one_pairs = 0;
+    sort(A.begin(), A.end());
+    sort(B.begin(), B.end());
 
-    for(int i=0;i<A.size();i++){
-        //vector<int> temp_pair;
-        //temp_pair.push_back(A[i]);
-        int cnt = count(B.begin(), B.end(), A[i]);
-        //temp_pair.push_back(cnt);
-        //pairs.push_back(temp_pair);
-        if(cnt == 0){
-            zero_pairs++;
+    int pairs = 0;
+
+    while(pointerA < n && pointerB < n){
+        if(A[pointerA] == B[pointerB]){
+            pairs++;
+            pointerA++;
+            pointerB++;
         }
-        else if(cnt == 1){
-            one_pairs++;
+        else if(A[pointerA] < B[pointerB]){
+            pointerA++;
+            nonListACount++;
         }
         else{
-            more_one_pairs++;
+            pointerB++;
+            nonListBCount++;
         }
-        printf("%d %d\n", A[i], cnt);
-        
+    }
+    if(pointerA < n ){
+        nonListACount += n - pointerA;
+    }
+    if(pointerB < n){
+        nonListBCount += n - pointerB;
     }
 
-    printf("zero_pairs: %d\n", zero_pairs);
-    printf("one_pairs: %d\n", one_pairs);
-    printf("more_one_pairs: %d\n", more_one_pairs);
-
-    if(zero_pairs > 0 && more_one_pairs != 0){
-        // make one change in B
-        zero_pairs--;
-        one_pairs+=2;
-        more_one_pairs--;
+    if(nonListACount > 0 && nonListBCount > 0){
+        printf("%d\n", pairs+1);
+        return pairs + 1;
     }
-    printf("%d\n",one_pairs+more_one_pairs);
-    return (one_pairs+more_one_pairs);
+    else if(nonListACount == 0 && nonListBCount == 0){
+        printf("%d\n", pairs-1);
+        return pairs - 1;
+    }
+    else{
+        printf("%d\n", pairs);
+        return pairs;
+    }
 }
 
 int main()
