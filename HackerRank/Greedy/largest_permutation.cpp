@@ -108,6 +108,7 @@ string rtrim(const string &str) {
         s.end()
     );
 
+
     return s;
 }
 
