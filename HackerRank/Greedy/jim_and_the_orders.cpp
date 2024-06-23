@@ -50,7 +50,6 @@ int main()
 
         for (int j = 0; j < 2; j++) {
             int orders_row_item = stoi(orders_row_temp[j]);
-
             orders[i][j] = orders_row_item;
         }
     }
@@ -66,9 +65,7 @@ int main()
     }
 
     fout << "\n";
-
     fout.close();
-
     return 0;
 }
 
