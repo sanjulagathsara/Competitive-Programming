@@ -14,6 +14,7 @@ vector<string> split(const string &);
  */
 
 vector<int> jimOrders(vector<vector<int> > orders) {
+    // Code here
   vector<int> orderTime;
  int n = orders.size();
  for(int i=1;i<=n;i++){
@@ -58,7 +59,6 @@ int main()
 
     for (size_t i = 0; i < result.size(); i++) {
         fout << result[i];
-
         if (i != result.size() - 1) {
             fout << " ";
         }
@@ -71,7 +71,6 @@ int main()
 
 string ltrim(const string &str) {
     string s(str);
-
     s.erase(
         s.begin(),
         find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
@@ -99,6 +98,7 @@ vector<string> split(const string &str) {
 
     while ((end = str.find(" ", start)) != string::npos) {
         tokens.push_back(str.substr(start, end - start));
+
         start = end + 1;
     }
 
