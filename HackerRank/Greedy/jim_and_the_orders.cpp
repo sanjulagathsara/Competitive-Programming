@@ -19,7 +19,7 @@ vector<int> jimOrders(vector<vector<int> > orders) {
  int n = orders.size();
  for(int i=1;i<=n;i++){
      orderTime.push_back((orders[i-1][0]+orders[i-1][1])*1000+(i-1));
-     //printf("%d\n",i);
+     printf("%d\n",i);
  }
  sort(orderTime.begin(),orderTime.end());
   vector<int> outOrder;
