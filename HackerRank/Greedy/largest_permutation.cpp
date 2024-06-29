@@ -108,7 +108,6 @@ string rtrim(const string &str) {
         s.end()
     );
 
-
     return s;
 }
 
@@ -128,3 +127,6 @@ vector<string> split(const string &str) {
 
     return tokens;
 }
+
+// Time Complexity: O(n^2)
+// Space Complexity: O(n)
