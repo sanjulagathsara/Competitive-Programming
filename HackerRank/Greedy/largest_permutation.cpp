@@ -23,7 +23,7 @@ vector<int> largestPermutation(int k, vector<int> arr) {
     
     for(int i=0;i<k;i++){
         if(i>=(n-1)){
-            break;
+            break; // No more swaps possible
         }
         
         //int max = *max_element(arr.begin()+i,arr.end());
