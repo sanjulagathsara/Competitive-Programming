@@ -23,6 +23,7 @@ int beautifulPairs(vector<int> A, vector<int> B) {
     int nonListACount = 0;
     int nonListBCount = 0;
 
+    // sort the arrays
     sort(A.begin(), A.end());
     sort(B.begin(), B.end());
 
